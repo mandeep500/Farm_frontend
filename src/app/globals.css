@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 145 60% 10%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-earth-50 text-farm-950 font-sans antialiased selection:bg-farm-200 selection:text-farm-950;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+}
+
+/* Custom Scrollbar for sleek modern feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f8f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #97cbab;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #65af82;
+}
+

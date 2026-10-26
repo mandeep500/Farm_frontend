@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /profile
+Disallow: /under-construction
+
+Sitemap: https://sekhonfarm.com/sitemap.xml
+
