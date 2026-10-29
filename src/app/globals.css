@@ -11,15 +11,49 @@
   html {
     scroll-behavior: smooth;
     color-scheme: light;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
     @apply bg-earth-50 text-farm-950 font-sans antialiased selection:bg-farm-200 selection:text-farm-950;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, .font-serif {
     font-feature-settings: "kern" 1, "liga" 1;
+    letter-spacing: -0.015em;
   }
+}
+
+/* 4K & Ultra-HD Clarity Enhancements */
+.ultra-sharp {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.text-crisp {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Glassmorphism tuned for 4K high density */
+.glass-panel-4k {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.glass-dark-4k {
+  background: rgba(12, 32, 21, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 }
 
 /* Custom Scrollbar for sleek modern feel */
@@ -39,4 +73,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #65af82;
 }
-

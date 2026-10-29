@@ -63,11 +63,12 @@ export function AboutSection() {
           <div className="lg:col-span-5 relative">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-farm-100">
               <Image
-                src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=1000&q=80"
-                alt="Farmer working carefully at Sekhon Farm"
+                src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=2560&q=95"
+                alt="Farmer working carefully at Sekhon Farm in 4K resolution"
                 fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                quality={95}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center hover:scale-[1.03] transition-transform duration-700 ultra-sharp"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-farm-950/70 via-transparent to-transparent" />
 

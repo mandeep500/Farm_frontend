@@ -36,7 +36,7 @@ export function FarmingStorySection() {
       description:
         "Our farmers step into the dew-covered fields at daybreak to harvest tender vegetables like lady finger, spinach, and red carrots before the sun stresses the crops.",
       image:
-        "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=2560&q=95",
       badge: "Hand-Harvested",
       tag: "Field Operations",
     },
@@ -47,7 +47,7 @@ export function FarmingStorySection() {
       description:
         "We treat soil as a living organism teeming with billions of beneficial mycorrhizae, bacteria, and earthworms that give our onions and potatoes deep nutritional density.",
       image:
-        "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2560&q=95",
       badge: "Living Soil",
       tag: "Land Stewardship",
     },
@@ -58,7 +58,7 @@ export function FarmingStorySection() {
       description:
         "Deep mountain aquifer water is gently delivered directly to root zones with zero evaporation, saving 65% water compared to conventional flood irrigation.",
       image:
-        "https://images.unsplash.com/photo-1592417817098-8f3d6910985c?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1592417817098-8f3d6910985c?auto=format&fit=crop&w=2560&q=95",
       badge: "Zero Water Waste",
       tag: "Green Technology",
     },
@@ -69,7 +69,7 @@ export function FarmingStorySection() {
       description:
         "Every tomato, cauliflower, and pepper seedling begins life in our protected polyhouses using pure organic compost, ensuring strong root networks before field planting.",
       image:
-        "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=2560&q=95",
       badge: "100% Non-GMO",
       tag: "Nursery Care",
     },
@@ -80,7 +80,7 @@ export function FarmingStorySection() {
       description:
         "Prepared on-site from cow dung, aged mulch, and fermented plant extracts (Jeevamrut). We feed the soil microbes, and the microbes feed our crops.",
       image:
-        "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=2560&q=95",
       badge: "Pure Jeevamrut",
       tag: "Soil Biology",
     },
@@ -91,7 +91,7 @@ export function FarmingStorySection() {
       description:
         "Border rows of sunflowers and marigolds host native honeybees and ladybugs that naturally consume crop pests without needing poisonous chemical sprays.",
       image:
-        "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=2560&q=95",
       badge: "Bee Sanctuary",
       tag: "Biodiversity",
     },
@@ -120,13 +120,14 @@ export function FarmingStorySection() {
               onClick={() => setActivePhoto(item)}
               className="group relative rounded-3xl overflow-hidden bg-gray-900 border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col justify-end min-h-[380px]"
             >
-              {/* Background Photo */}
+              {/* Background Photo in 4K */}
               <Image
                 src={item.image}
                 alt={item.title}
                 fill
+                quality={95}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out ultra-sharp"
               />
 
               {/* Gradient Dark Overlay */}
@@ -213,7 +214,9 @@ export function FarmingStorySection() {
                 src={activePhoto.image}
                 alt={activePhoto.title}
                 fill
-                className="object-cover"
+                quality={95}
+                sizes="(max-width: 1024px) 95vw, 1000px"
+                className="object-cover ultra-sharp"
               />
               <button
                 type="button"

@@ -105,7 +105,7 @@ export const GALLERY_ITEMS = [
     category: "Fields",
     description: "Golden heritage crops ripening under the morning sun with natural irrigation.",
     imageUrl:
-      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=2560&q=95",
     alt: "Sekhon Farm sunlit wheat fields",
   },
   {
@@ -114,7 +114,7 @@ export const GALLERY_ITEMS = [
     category: "Harvest",
     description: "Crisp organic heirloom vegetables harvested before dawn for maximum crispness.",
     imageUrl:
-      "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=2560&q=95",
     alt: "Freshly harvested organic vegetables at Sekhon Farm",
   },
   {
@@ -123,7 +123,7 @@ export const GALLERY_ITEMS = [
     category: "Orchards",
     description: "Naturally nurtured fruit trees flourishing in organic nutrient-rich soil.",
     imageUrl:
-      "https://images.unsplash.com/photo-1592417817098-8f3d6910985c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1592417817098-8f3d6910985c?auto=format&fit=crop&w=2560&q=95",
     alt: "Heritage fruit orchard at Sekhon Farm",
   },
   {
@@ -132,7 +132,7 @@ export const GALLERY_ITEMS = [
     category: "Sustainable",
     description: "Eco-friendly drip irrigation powered 100% by clean solar energy.",
     imageUrl:
-      "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=2560&q=95",
     alt: "Sustainable solar irrigation technology at Sekhon Farm",
   },
   {
@@ -141,7 +141,7 @@ export const GALLERY_ITEMS = [
     category: "Fields",
     description: "Microclimate-controlled organic seedling germination for seasonal vitality.",
     imageUrl:
-      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=2560&q=95",
     alt: "Organic nursery greenhouse at Sekhon Farm",
   },
   {
@@ -150,7 +150,7 @@ export const GALLERY_ITEMS = [
     category: "Sustainable",
     description: "Active farm apiary fostering bee populations and producing raw, unpasteurized honey.",
     imageUrl:
-      "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=2560&q=95",
     alt: "Sekhon Farm bee hives and natural honey cultivation",
   },
 ];

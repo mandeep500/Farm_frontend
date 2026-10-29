@@ -47,12 +47,13 @@ export default function UnderConstructionPage() {
             {/* Background farm scenery */}
             <div className="absolute inset-0 z-0">
               <Image
-                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=80"
-                alt="Sekhon Farm rolling green hills"
+                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2560&q=95"
+                alt="Sekhon Farm rolling green hills in 4K"
                 fill
                 priority
+                quality={95}
                 sizes="100vw"
-                className="object-cover object-center opacity-30 scale-105"
+                className="object-cover object-center opacity-45 ultra-sharp"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-farm-950 via-farm-950/80 to-farm-900/60" />
             </div>

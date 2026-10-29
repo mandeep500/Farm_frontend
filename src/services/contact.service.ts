@@ -1,15 +1,42 @@
 import { ContactPayload, ContactResponse } from "../types/contact.types";
 import { ApiResponse } from "../types/api.types";
 
-const TARGET_EMAIL = "mandeepsekhon0052@gmail.com";
-
 export const contactService = {
   async submitContact(
-    payload: ContactPayload
+    payload: ContactPayload & { website?: string; hp_field?: string; _renderedAt?: number }
   ): Promise<ApiResponse<ContactResponse>> {
-    const ticketId = `SF-${Math.floor(100000 + Math.random() * 900000)}`;
+    const backendUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
 
-    // 1. Try local Next.js API route first
+    // 1. Try Express/Node.js backend first
+    try {
+      const res = await fetch(`${backendUrl.replace(/\/$/, "")}/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        return {
+          success: true,
+          message: data.message || "Thank you! Your message has been sent successfully.",
+          data: data.data,
+        };
+      } else if (!res.ok && data.message) {
+        throw new Error(data.message);
+      }
+    } catch (backendErr: any) {
+      // If server returned a business error (e.g. rate limit or validation), rethrow it
+      if (backendErr.message && !backendErr.message.includes("fetch")) {
+        throw backendErr;
+      }
+      console.warn("[ContactService] Backend direct connection attempt failed, trying local API route...", backendErr.message);
+    }
+
+    // 2. Fallback to Next.js API route
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -20,75 +47,18 @@ export const contactService = {
         body: JSON.stringify(payload),
       });
 
-      if (res.ok) {
-        const data = await res.json();
+      const data = await res.json();
+      if (res.ok && data.success) {
         return {
           success: true,
-          message:
-            data.message ||
-            `Thank you! Your message has been routed directly to ${TARGET_EMAIL}.`,
-          data: data.data || {
-            received: true,
-            ticketId,
-            message: `Message sent to ${TARGET_EMAIL}`,
-          },
+          message: data.message || "Thank you! Your message has been sent successfully.",
+          data: data.data,
         };
+      } else {
+        throw new Error(data.message || "Failed to deliver message. Please try again.");
       }
-    } catch (apiRouteErr) {
-      console.warn("Local /api/contact route call skipped:", apiRouteErr);
+    } catch (apiErr: any) {
+      throw new Error(apiErr.message || "Unable to send inquiry. Please check your connection and try again.");
     }
-
-    // 2. Direct client-side FormSubmit fallback
-    try {
-      const emailPayload = {
-        name: payload.name,
-        email: payload.email,
-        phone: payload.phone || "Not provided",
-        message: payload.message,
-        ticketId,
-        submittedAt: new Date().toISOString(),
-        _subject: `🌾 New Sekhon Farm Inquiry from ${payload.name} [${ticketId}]`,
-        _replyto: payload.email,
-        _template: "table",
-        _captcha: "false",
-      };
-
-      const directRes = await fetch(
-        `https://formsubmit.co/ajax/${TARGET_EMAIL}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(emailPayload),
-        }
-      );
-
-      if (directRes.ok) {
-        return {
-          success: true,
-          message: `Thank you, ${payload.name}! Your inquiry has been sent to ${TARGET_EMAIL}. Our team will contact you within 24 hours.`,
-          data: {
-            received: true,
-            ticketId,
-            message: `Delivered to ${TARGET_EMAIL}`,
-          },
-        };
-      }
-    } catch (directErr) {
-      console.warn("Direct FormSubmit call error:", directErr);
-    }
-
-    // 3. Fallback confirmation
-    return {
-      success: true,
-      message: `Thank you, ${payload.name}! Your message has been received for ${TARGET_EMAIL}. We will get back to you within 24 hours.`,
-      data: {
-        received: true,
-        ticketId,
-        message: `Notification scheduled for ${TARGET_EMAIL}`,
-      },
-    };
   },
 };
