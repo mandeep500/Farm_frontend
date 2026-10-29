@@ -123,7 +123,7 @@ export const GALLERY_ITEMS = [
     category: "Orchards",
     description: "Naturally nurtured fruit trees flourishing in organic nutrient-rich soil.",
     imageUrl:
-      "https://images.unsplash.com/photo-1592417817098-8f3d6910985c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1200&q=80",
     alt: "Heritage fruit orchard at Sekhon Farm",
   },
   {

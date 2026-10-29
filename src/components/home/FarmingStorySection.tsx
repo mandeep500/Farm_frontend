@@ -58,7 +58,7 @@ export function FarmingStorySection() {
       description:
         "Deep mountain aquifer water is gently delivered directly to root zones with zero evaporation, saving 65% water compared to conventional flood irrigation.",
       image:
-        "https://images.unsplash.com/photo-1592417817098-8f3d6910985c?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1200&q=80",
       badge: "Zero Water Waste",
       tag: "Green Technology",
     },
