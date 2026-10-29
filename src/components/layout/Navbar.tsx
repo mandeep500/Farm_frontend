@@ -41,8 +41,9 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "About", href: "/#about" },
-    { label: "Farm Highlights", href: "/#highlights" },
+    { label: "Fresh Harvest", href: "/#produce" },
+    { label: "Farming Life", href: "/#farming-story" },
+    { label: "Our Story", href: "/#about" },
     { label: "Gallery", href: "/#gallery" },
     { label: "Contact", href: "/#contact" },
   ];

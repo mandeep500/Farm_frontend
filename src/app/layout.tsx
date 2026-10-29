@@ -12,16 +12,18 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: `${APP_CONFIG.name} — Log In or Sign Up`,
+    default: `${APP_CONFIG.name} — Purity, Heritage & Sustainable Agriculture`,
     template: `%s | ${APP_CONFIG.name}`,
   },
   description:
-    "Log in to Sekhon Farm to access your patron portal, seasonal organic harvest updates, and regenerative agriculture community.",
+    "Discover Sekhon Farm: 100% chemical-free organic produce, heirloom onions, potatoes, tender lady finger, sweet carrots, living soil stewardship, and generational agricultural trust.",
   keywords: [
     "Sekhon Farm",
-    "Log in",
-    "Sign up",
     "Organic Farm",
+    "Fresh Vegetables",
+    "Heirloom Produce",
+    "Lady Finger Okra",
+    "Organic Onions",
     "Regenerative Agriculture",
     "Non-GMO Produce",
   ],

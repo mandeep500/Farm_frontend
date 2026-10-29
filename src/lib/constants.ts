@@ -4,9 +4,9 @@ export const APP_CONFIG = {
   description:
     "Cultivating nature's finest produce with regenerative practices, generational wisdom, and an uncompromising commitment to purity and ecological balance.",
   contact: {
-    phone: "+1 (555) 735-4661",
-    email: "contact@sekhonfarm.com",
-    address: "Sekhon Farm Estate, 42 Heritage Valley Road, Greenfields Valley",
+    phone: "+91 7888313146",
+    email: "mandeepsekhon0052@gmail.com",
+    address: "Sekhon Farm | Village: Borawal | Tehsil: Budhlada | District: Mansa | State: Punjab | India | PIN: 151501",
     hours: "Monday – Saturday: 7:00 AM – 6:00 PM | Sunday: 8:00 AM – 2:00 PM",
   },
   social: {
@@ -17,6 +17,8 @@ export const APP_CONFIG = {
   },
   navLinks: [
     { label: "Home", href: "/" },
+    { label: "Fresh Harvest", href: "/#produce" },
+    { label: "Farming Life", href: "/#farming-story" },
     { label: "About", href: "/#about" },
     { label: "Farm Highlights", href: "/#highlights" },
     { label: "Gallery", href: "/#gallery" },
@@ -25,10 +27,12 @@ export const APP_CONFIG = {
   footerLinks: {
     quickLinks: [
       { label: "Home", href: "/" },
+      { label: "Fresh Harvest Produce", href: "/#produce" },
+      { label: "Farming Life & Soil", href: "/#farming-story" },
       { label: "About Our Heritage", href: "/#about" },
       { label: "Farm Highlights", href: "/#highlights" },
       { label: "Farm Gallery", href: "/#gallery" },
-      { label: "Member Portal", href: "/under-construction" },
+      { label: "Member Portal", href: "/login" },
       { label: "Contact Us", href: "/#contact" },
     ],
     practices: [
