@@ -34,7 +34,7 @@ export const VEGETABLE_CATEGORIES: VegetableCategory[] = [
     hindiName: "सभी फसलें",
     shortDesc: "Today's fresh daily harvest across all organic blocks",
     iconImage:
-      "https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=800&q=95",
     emoji: "🧺",
     tag: "Daily Harvest",
     color: "emerald",
@@ -45,7 +45,7 @@ export const VEGETABLE_CATEGORIES: VegetableCategory[] = [
     hindiName: "प्याज",
     shortDesc: "Pungent, sun-cured red & yellow heirloom onions",
     iconImage:
-      "https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=800&q=95",
     emoji: "🧅",
     tag: "Aromatic & Sweet",
     color: "rose",
@@ -56,7 +56,7 @@ export const VEGETABLE_CATEGORIES: VegetableCategory[] = [
     hindiName: "आलू",
     shortDesc: "Firm, buttery living-soil golden and red potatoes",
     iconImage:
-      "https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=95",
     emoji: "🥔",
     tag: "Living Soil",
     color: "amber",
@@ -67,7 +67,7 @@ export const VEGETABLE_CATEGORIES: VegetableCategory[] = [
     hindiName: "गाजर",
     shortDesc: "Crisp, sweet, antioxidant-packed heirloom carrots",
     iconImage:
-      "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=800&q=95",
     emoji: "🥕",
     tag: "High Carotene",
     color: "orange",
@@ -78,7 +78,7 @@ export const VEGETABLE_CATEGORIES: VegetableCategory[] = [
     hindiName: "भिंडी",
     shortDesc: "Tender, slender okra harvested fresh before dawn",
     iconImage:
-      "https://images.unsplash.com/photo-1625944230945-1b7dd3b949ab?auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1625944230945-1b7dd3b949ab?auto=format&fit=crop&w=800&q=95",
     emoji: "🌿",
     tag: "Tender & Crisp",
     color: "green",
@@ -89,7 +89,7 @@ export const VEGETABLE_CATEGORIES: VegetableCategory[] = [
     hindiName: "टमाटर",
     shortDesc: "Juicy, vine-ripened red heirloom tomatoes",
     iconImage:
-      "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=800&q=95",
     emoji: "🍅",
     tag: "Vine Ripened",
     color: "red",
@@ -100,7 +100,7 @@ export const VEGETABLE_CATEGORIES: VegetableCategory[] = [
     hindiName: "फूलगोभी",
     shortDesc: "Snow-white, dense heads grown with cold-spring water",
     iconImage:
-      "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=800&q=95",
     emoji: "🥦",
     tag: "Snow White",
     color: "stone",
@@ -111,7 +111,7 @@ export const VEGETABLE_CATEGORIES: VegetableCategory[] = [
     hindiName: "पालक",
     shortDesc: "Tender dark green leafy greens full of iron and vitality",
     iconImage:
-      "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=800&q=95",
     emoji: "🥬",
     tag: "Iron Packed",
     color: "emerald",
@@ -122,7 +122,7 @@ export const VEGETABLE_CATEGORIES: VegetableCategory[] = [
     hindiName: "लहसुन",
     shortDesc: "Aromatic native cloves with medicinal allicin potency",
     iconImage:
-      "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?auto=format&fit=crop&w=800&q=95",
     emoji: "🧄",
     tag: "High Allicin",
     color: "stone",
@@ -133,7 +133,7 @@ export const VEGETABLE_CATEGORIES: VegetableCategory[] = [
     hindiName: "शिमला मिर्च",
     shortDesc: "Thick-walled, crisp green and sweet bell peppers",
     iconImage:
-      "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&fit=crop&w=800&q=95",
     emoji: "🫑",
     tag: "Crisp & Juicy",
     color: "emerald",
@@ -144,7 +144,7 @@ export const VEGETABLE_CATEGORIES: VegetableCategory[] = [
     hindiName: "हरी मिर्च",
     shortDesc: "Fiery, aromatic fresh Indian chillies hand-picked daily",
     iconImage:
-      "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=800&q=95",
     emoji: "🌶️",
     tag: "Fresh Zest",
     color: "green",
@@ -155,7 +155,7 @@ export const VEGETABLE_CATEGORIES: VegetableCategory[] = [
     hindiName: "मक्का / मटर",
     shortDesc: "Naturally sweet golden cobs and tender green pod peas",
     iconImage:
-      "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=800&q=95",
     emoji: "🌽",
     tag: "Naturally Sweet",
     color: "amber",
@@ -178,7 +178,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 4.9,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=1600&q=95",
     description:
       "Naturally cured in ambient shade for maximum shelf life. Crisp layers with high quercetin and balanced pungency.",
     benefits: ["Rich in Quercetin Antioxidants", "Natural Immunity Booster", "Living Soil Micro-Nutrients"],
@@ -197,7 +197,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 4.8,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=1600&q=95",
     description:
       "Crisp green stalks and delicate white bulbs. Perfect for fresh salads, wok stir-fries, and garnishes.",
     benefits: ["High Vitamin K", "Crisp Texture", "Delicate Sweet Aroma"],
@@ -218,7 +218,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 5.0,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=1600&q=95",
     description:
       "Dug fresh from rich composted earth. Unwashed with soil dust preserving natural freshness and buttery flavor.",
     benefits: ["Complex Carbohydrates", "High Potassium & Vitamin B6", "Rich Velvety Texture"],
@@ -237,7 +237,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 4.9,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1508313880080-c4bef0730395?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1508313880080-c4bef0730395?auto=format&fit=crop&w=1600&q=95",
     description:
       "Tender, thin-skinned baby potatoes that roast to a melt-in-the-mouth perfection with rosemary or Indian spices.",
     benefits: ["Thin Edible Skin", "Sweet Earthy Flavor", "Ideal for Dum Aloo"],
@@ -258,7 +258,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 5.0,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=1600&q=95",
     description:
       "Crunchy, deeply red heirloom carrots renowned for their extraordinary natural sweetness and high lycopene.",
     benefits: ["Immense Beta-Carotene", "Rich in Lycopene", "Perfect for Gajar Halwa & Juices"],
@@ -279,7 +279,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 4.9,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1625944230945-1b7dd3b949ab?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1625944230945-1b7dd3b949ab?auto=format&fit=crop&w=1600&q=95",
     description:
       "Every single okra is hand-checked for the signature snap at the tip. Slender, zero fibrous toughness, cooks crisp without excess slime.",
     benefits: ["Abundant Dietary Soluble Fiber", "Blood Sugar Regulation Support", "Zero Bitter Chemicals"],
@@ -298,7 +298,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 4.8,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1589927986089-35812388d1f4?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1589927986089-35812388d1f4?auto=format&fit=crop&w=1600&q=95",
     description:
       "Small 3-inch tender okra pods ideal for crispy Kurkuri Bhindi or mild tomato-curry preparation.",
     benefits: ["Rich in Folate & Vitamin C", "Super Easy Cooking", "Natural Mucilage for Digestion"],
@@ -319,7 +319,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 4.9,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=1600&q=95",
     description:
       "Never artificially ripened with carbide or ethylene gas. Left on the vine until bursting with rich umami and gentle tang.",
     benefits: ["High Lycopene & Vitamin C", "Pure Sweet-Tart Balanced Acid", "Dense Meaty Flesh"],
@@ -340,7 +340,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 4.9,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=1600&q=95",
     description:
       "Tightly packed creamy-white florets shielded from sunlight by their own leaves for pure purity and crisp crunch.",
     benefits: ["High Glucosinolates", "Great Low-Carb Alternative", "Rich in Choline"],
@@ -361,7 +361,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 5.0,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=1600&q=95",
     description:
       "Deep jade green leaves hand-cut at daybreak with dew still intact. Mild, sweet, with none of the harsh metallic spray residue.",
     benefits: ["Packed with Bioavailable Iron", "High Lutein & Zeaxanthin", "Nourishes Living Gut Flora"],
@@ -382,7 +382,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 5.0,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?auto=format&fit=crop&w=1600&q=95",
     description:
       "Small tight cloves with intense aromatic oils. Just 2 cloves deliver the flavor and active allicin of 5 standard supermarket cloves.",
     benefits: ["Immense Antibacterial Allicin", "Cardiovascular Support", "Extended Kitchen Shelf Life"],
@@ -403,7 +403,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 4.8,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&fit=crop&w=1600&q=95",
     description:
       "Thick, crunchy succulent walls that snap with juice. Sweet with mild earthy spice, perfect for sauteing, roasting, and salads.",
     benefits: ["Rich in Vitamin C & A", "Low Calorie Crunch", "Living Soil Minerals"],
@@ -424,7 +424,7 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 4.9,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=1600&q=95",
     description:
       "Vibrant slender green peppers loaded with natural capsaicin and spicy fragrant oils. Harvested while still glossy and firm.",
     benefits: ["High Capsaicin Metabolism Boost", "Fresh Vitamin C", "Zero Artificial Ripening"],
@@ -445,10 +445,9 @@ export const PRODUCE_ITEMS: ProduceItem[] = [
     rating: 4.9,
     inStock: true,
     image:
-      "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=1600&q=95",
     description:
       "Plump, juicy golden kernels wrapped in moist fresh green husks. Boils or roasts to fragrant, buttery perfection.",
     benefits: ["Natural Zeaxanthin for Vision", "Dietary Fiber", "Sweet Natural Sucrose"],
   },
 ];
-

@@ -124,9 +124,10 @@ export function VegetableCategoriesBar({
                         src={cat.iconImage}
                         alt={cat.name}
                         fill
-                        sizes="60px"
+                        quality={95}
+                        sizes="(max-width: 640px) 100px, 120px"
                         onError={() => handleImageError(cat.id)}
-                        className="object-cover rounded-xl transition-transform duration-300 group-hover:scale-110"
+                        className="object-cover rounded-xl transition-transform duration-300 group-hover:scale-110 ultra-sharp"
                       />
                       {/* Subtle organic shine overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none rounded-xl" />

@@ -92,8 +92,9 @@ export function GallerySection() {
                 src={item.imageUrl}
                 alt={item.alt}
                 fill
+                quality={95}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+                className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500 ease-out ultra-sharp"
               />
               {/* Gradient & Caption Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-farm-950/80 via-farm-950/20 to-transparent opacity-80 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
@@ -161,8 +162,9 @@ export function GallerySection() {
                 src={filteredItems[selectedImageIndex].imageUrl}
                 alt={filteredItems[selectedImageIndex].alt}
                 fill
-                sizes="90vw"
-                className="object-contain"
+                quality={95}
+                sizes="95vw"
+                className="object-contain ultra-sharp"
               />
             </div>
             <div className="text-center mt-4 text-white">

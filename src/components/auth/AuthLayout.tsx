@@ -28,12 +28,13 @@ export function AuthLayout({
         {/* Background farm photo */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80"
-            alt="Sekhon Farm sunrise over agricultural fields"
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2560&q=95"
+            alt="Sekhon Farm sunrise over agricultural fields in 4K"
             fill
             priority
+            quality={95}
             sizes="50vw"
-            className="object-cover object-center opacity-40 scale-105"
+            className="object-cover object-center opacity-65 ultra-sharp"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-farm-950 via-farm-950/70 to-farm-900/60" />
         </div>

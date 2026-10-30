@@ -180,8 +180,9 @@ export function ProduceShowcase({
                       src={item.image}
                       alt={item.name}
                       fill
+                      quality={95}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover group-hover:scale-[1.03] transition-transform duration-500 ultra-sharp"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
@@ -294,13 +295,16 @@ export function ProduceShowcase({
             className="bg-white rounded-3xl max-w-xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100 overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Image Header */}
-            <div className="relative w-full h-64 bg-gray-900">
+            {/* Modal Image Header in 4K */}
+            <div className="relative w-full h-72 bg-gray-900">
               <Image
                 src={selectedProduce.image}
                 alt={selectedProduce.name}
                 fill
-                className="object-cover"
+                quality={95}
+                priority
+                sizes="(max-width: 768px) 100vw, 650px"
+                className="object-cover ultra-sharp"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               <button

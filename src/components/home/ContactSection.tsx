@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, ContactFormData } from "../../schemas/contact.schema";
@@ -18,17 +18,23 @@ import {
   Clock,
   Send,
   User,
-  MessageSquare,
   Facebook,
   Instagram,
   Youtube,
   Linkedin,
   Calendar,
+  CheckCircle2,
+  ShieldCheck,
 } from "lucide-react";
 
 export function ContactSection() {
   const [serverError, setServerError] = useState<string | null>(null);
-  const [successInfo, setSuccessInfo] = useState<string | null>(null);
+  const [successInfo, setSuccessInfo] = useState<{ name: string; ticketId?: string; message: string } | null>(null);
+  const [renderedAt, setRenderedAt] = useState<number>(Date.now());
+
+  useEffect(() => {
+    setRenderedAt(Date.now());
+  }, []);
 
   const {
     register,
@@ -42,6 +48,8 @@ export function ContactSection() {
       email: "",
       phone: "",
       message: "",
+      website: "",
+      hp_field: "",
     },
   });
 
@@ -49,17 +57,26 @@ export function ContactSection() {
     setServerError(null);
     setSuccessInfo(null);
     try {
-      const response = await contactService.submitContact(data);
+      const response = await contactService.submitContact({
+        ...data,
+        _renderedAt: renderedAt,
+      });
+
       if (response.success) {
-        setSuccessInfo(
-          response.message ||
-            "Thank you! Your inquiry has been delivered to Sekhon Farm."
-        );
+        setSuccessInfo({
+          name: data.name,
+          ticketId: response.data?.ticketId,
+          message:
+            response.message ||
+            "Your message has been delivered directly to our Gmail inbox. Our agricultural team will be in touch within 24 hours.",
+        });
         reset();
+      } else {
+        setServerError(response.message || "Failed to deliver your message. Please try again.");
       }
     } catch (err: any) {
       setServerError(
-        err.message || "Failed to deliver your message. Please try again."
+        err.message || "Failed to deliver your message. Please check your internet connection or try again."
       );
     }
   };
@@ -228,13 +245,14 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Right Column: Contact Form with Validation */}
-          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-farm-200/80 shadow-lg">
-            <div className="mb-6">
-              <h3 className="font-serif text-2xl font-bold text-farm-950">
+          {/* Right Column: Contact Form Matching User Screenshot */}
+          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-gray-200/90 shadow-xl">
+            {/* Header Matching Provided Design */}
+            <div className="mb-8">
+              <h3 className="font-serif text-3xl sm:text-4xl font-bold text-farm-950 tracking-tight">
                 Send Us a Message
               </h3>
-              <p className="text-xs sm:text-sm text-farm-600 mt-1">
+              <p className="text-sm font-medium text-emerald-800 mt-2">
                 Fill in the details below and our team will get back to you within 24 hours.
               </p>
             </div>
@@ -244,93 +262,189 @@ export function ContactSection() {
               <ErrorMessage
                 message={serverError}
                 onDismiss={() => setServerError(null)}
-                className="mb-6"
+                className="mb-6 rounded-2xl"
               />
             )}
 
             {successInfo && (
-              <SuccessMessage
-                title="Message Transmitted!"
-                message={successInfo}
-                onDismiss={() => setSuccessInfo(null)}
-                className="mb-6"
-              />
+              <div className="mb-6 p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-950 shadow-sm animate-fade-in">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 space-y-1">
+                    <h4 className="font-serif font-bold text-base text-emerald-950">
+                      Message Sent Successfully!
+                    </h4>
+                    <p className="text-xs sm:text-sm text-emerald-800 leading-relaxed">
+                      {successInfo.message}
+                    </p>
+                    {successInfo.ticketId && (
+                      <p className="text-xs font-semibold text-emerald-900 pt-1">
+                        Inquiry Reference Ticket: <span className="font-mono bg-emerald-100 px-2 py-0.5 rounded text-emerald-950">{successInfo.ticketId}</span>
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
             )}
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
-              {/* Name */}
-              <Input
-                label="Full Name"
-                placeholder="e.g. Gurpreet Singh"
-                isRequired
-                leftIcon={<User className="w-4 h-4 text-farm-600" />}
-                error={errors.name?.message}
-                {...register("name")}
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
+              {/* Spam Protection Honeypots (Invisible to humans, trapped by automated bots) */}
+              <input
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+                {...register("website")}
+              />
+              <input
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+                {...register("hp_field")}
               />
 
-              {/* Email & Phone Row */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <Input
-                  label="Email Address"
-                  type="email"
-                  placeholder="name@example.com"
-                  isRequired
-                  leftIcon={<Mail className="w-4 h-4 text-farm-600" />}
-                  error={errors.email?.message}
-                  {...register("email")}
-                />
-
-                <Input
-                  label="Phone Number"
-                  type="tel"
-                  placeholder="(555) 000-0000"
-                  isRequired
-                  leftIcon={<Phone className="w-4 h-4 text-farm-600" />}
-                  error={errors.phone?.message}
-                  {...register("phone")}
-                />
+              {/* 1. Full Name */}
+              <div className="space-y-2">
+                <label
+                  htmlFor="contact-name"
+                  className="block text-sm font-medium text-farm-950"
+                >
+                  Full Name <span className="text-rose-500 font-semibold ml-0.5">*</span>
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-emerald-700">
+                    <User className="w-5 h-5 stroke-[1.75]" />
+                  </div>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    placeholder="e.g. Gurpreet Singh"
+                    aria-invalid={!!errors.name}
+                    className={`w-full py-3.5 pl-12 pr-4 rounded-2xl border bg-white text-gray-900 text-sm sm:text-base placeholder:text-gray-400 transition-all duration-150 outline-none ${
+                      errors.name
+                        ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                        : "border-gray-300 hover:border-gray-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+                    }`}
+                    {...register("name")}
+                  />
+                </div>
+                {errors.name && (
+                  <p role="alert" className="text-xs text-red-600 font-medium pl-1">
+                    {errors.name.message}
+                  </p>
+                )}
               </div>
 
-              {/* Message */}
-              <div className="space-y-1.5">
+              {/* 2 & 3. Email Address & Phone Number Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {/* Email Address */}
+                <div className="space-y-2">
+                  <label
+                    htmlFor="contact-email"
+                    className="block text-sm font-medium text-farm-950"
+                  >
+                    Email Address <span className="text-rose-500 font-semibold ml-0.5">*</span>
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-emerald-700">
+                      <Mail className="w-5 h-5 stroke-[1.75]" />
+                    </div>
+                    <input
+                      id="contact-email"
+                      type="email"
+                      placeholder="name@example.com"
+                      aria-invalid={!!errors.email}
+                      className={`w-full py-3.5 pl-12 pr-4 rounded-2xl border bg-white text-gray-900 text-sm sm:text-base placeholder:text-gray-400 transition-all duration-150 outline-none ${
+                        errors.email
+                          ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                          : "border-gray-300 hover:border-gray-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+                      }`}
+                      {...register("email")}
+                    />
+                  </div>
+                  {errors.email && (
+                    <p role="alert" className="text-xs text-red-600 font-medium pl-1">
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Phone Number */}
+                <div className="space-y-2">
+                  <label
+                    htmlFor="contact-phone"
+                    className="block text-sm font-medium text-farm-950"
+                  >
+                    Phone Number <span className="text-rose-500 font-semibold ml-0.5">*</span>
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-emerald-700">
+                      <Phone className="w-5 h-5 stroke-[1.75]" />
+                    </div>
+                    <input
+                      id="contact-phone"
+                      type="tel"
+                      placeholder="(555) 000-0000"
+                      aria-invalid={!!errors.phone}
+                      className={`w-full py-3.5 pl-12 pr-4 rounded-2xl border bg-white text-gray-900 text-sm sm:text-base placeholder:text-gray-400 transition-all duration-150 outline-none ${
+                        errors.phone
+                          ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                          : "border-gray-300 hover:border-gray-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+                      }`}
+                      {...register("phone")}
+                    />
+                  </div>
+                  {errors.phone && (
+                    <p role="alert" className="text-xs text-red-600 font-medium pl-1">
+                      {errors.phone.message}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {/* 4. Message */}
+              <div className="space-y-2">
                 <label
                   htmlFor="contact-message"
                   className="block text-sm font-medium text-farm-950"
                 >
-                  Message
-                  <span className="text-red-500 ml-1" aria-hidden="true">*</span>
+                  Message <span className="text-rose-500 font-semibold ml-0.5">*</span>
                 </label>
-                <div className="relative">
-                  <textarea
-                    id="contact-message"
-                    rows={4}
-                    placeholder="Tell us about your produce needs, order volume, or questions..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-gray-300 bg-white text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-farm-200/60 focus:border-farm-600 hover:border-gray-400 transition duration-150"
-                    aria-invalid={!!errors.message}
-                    {...register("message")}
-                  />
-                </div>
+                <textarea
+                  id="contact-message"
+                  rows={5}
+                  placeholder="Tell us about your produce needs, order volume, or questions..."
+                  aria-invalid={!!errors.message}
+                  className={`w-full p-4 rounded-2xl border bg-white text-gray-900 text-sm sm:text-base placeholder:text-gray-400 transition-all duration-150 outline-none resize-y ${
+                    errors.message
+                      ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                      : "border-gray-300 hover:border-gray-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+                  }`}
+                  {...register("message")}
+                />
                 {errors.message && (
-                  <p
-                    role="alert"
-                    className="text-xs text-red-600 font-medium mt-1 flex items-center gap-1.5"
-                  >
+                  <p role="alert" className="text-xs text-red-600 font-medium pl-1">
                     {errors.message.message}
                   </p>
                 )}
               </div>
 
-              {/* Submit CTA */}
+              {/* Submit Button Matching Brand Design */}
               <div className="pt-2">
                 <Button
                   type="submit"
                   size="lg"
                   variant="primary"
                   isLoading={isSubmitting}
-                  className="w-full sm:w-auto min-w-[180px] font-semibold shadow-md"
+                  className="w-full sm:w-auto min-w-[200px] text-base font-bold bg-[#1a3d29] hover:bg-[#275e3e] active:scale-[0.98] transition-all rounded-xl shadow-md text-white py-3.5 px-8"
                   rightIcon={<Send className="w-4 h-4" />}
                 >
-                  Submit Inquiry
+                  {isSubmitting ? "Sending to Gmail..." : "Send Message"}
                 </Button>
               </div>
             </form>
@@ -340,4 +454,3 @@ export function ContactSection() {
     </section>
   );
 }
-
